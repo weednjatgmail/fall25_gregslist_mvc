@@ -9,6 +9,10 @@ main {
   flex-grow: 1;
 }
 
+label {
+  display: block;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;

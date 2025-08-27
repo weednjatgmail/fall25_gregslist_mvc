@@ -63,10 +63,10 @@ export class Car {
   }
 
   get listedAtDate() {
-    return this.listedAt.toLocaleDateString()
+    return this.listedAt.toLocaleDateString() // 12/20/2020
   }
 
   get listedAtTime() {
-    return this.listedAt.toLocaleTimeString()
+    return this.listedAt.toLocaleTimeString() // 11:11:00 AM
   }
 }
