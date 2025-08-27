@@ -1,9 +1,8 @@
+import { CarsController } from './controllers/CarsController.js';
 import { ExampleController } from './controllers/ExampleController.js';
 
 class App {
-
-  ExampleController = new ExampleController() // ☑️ you can remove this - example only
-
+  carsController = new CarsController()
 }
 
 window['app'] = new App()

@@ -11,6 +11,7 @@ export class Car {
     this.hasCleanTitle = data.hasCleanTitle
     this.isDrivable = data.isDrivable
     this.condition = data.condition
+    // TODO show when car was listed at
   }
 }
 
