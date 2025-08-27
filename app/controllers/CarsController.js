@@ -11,7 +11,7 @@ export class CarsController {
     console.log('drawing cars!')
     let listingContent = ''
     AppState.cars.forEach(car => {
-      listingContent += car.make + car.model
+      listingContent += car.listingTemplate
     })
     const carListingElem = document.getElementById('car-listings')
     carListingElem.innerHTML = listingContent
