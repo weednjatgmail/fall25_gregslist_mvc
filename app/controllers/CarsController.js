@@ -7,7 +7,9 @@ export class CarsController {
     console.log('CARS CONTROLLER IS LOADED 🚓🚗🚙');
     AppState.on('cars', this.drawCarListings) // 👷‍♂️ --> AppState.cars ; 👷‍♂️drawCarListings()
 
-    this.drawCarListings()
+    carsService.loadCars()
+
+    // this.drawCarListings()
   }
 
   drawCarListings() {
@@ -48,5 +50,16 @@ export class CarsController {
 
     // @ts-ignore
     formThatSubmitted.reset() // resets the form
+  }
+
+  deleteCar(carId) {
+
+    const confirmed = window.confirm('Are you sure you want to delete this car?')
+    if (!confirmed) { // if (confirmed == false)
+      return
+    }
+    console.log('deleting car with id of ' + carId);
+
+    carsService.deleteCar(carId)
   }
 }
