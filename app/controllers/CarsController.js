@@ -5,15 +5,16 @@ import { getFormData } from "../utils/FormHandler.js";
 export class CarsController {
   constructor() {
     console.log('CARS CONTROLLER IS LOADED 🚓🚗🚙');
+
     AppState.on('cars', this.drawCarListings) // 👷‍♂️ --> AppState.cars ; 👷‍♂️drawCarListings()
 
     carsService.loadCars()
 
-    // this.drawCarListings()
+    // this.drawCarListings() loadCars triggers our observer, so this is no longer needed
   }
 
   drawCarListings() {
-    console.log('drawing cars!')
+    // console.log('drawing cars!')
     let listingContent = ''
     AppState.cars.forEach(car => {
       listingContent += car.listingTemplate
@@ -53,11 +54,12 @@ export class CarsController {
   }
 
   deleteCar(carId) {
-
     const confirmed = window.confirm('Are you sure you want to delete this car?')
+
     if (!confirmed) { // if (confirmed == false)
-      return
+      return // function ends here
     }
+
     console.log('deleting car with id of ' + carId);
 
     carsService.deleteCar(carId)

@@ -5,7 +5,7 @@ export class Car {
     this.id = generateId() // generates a super unique id
     this.make = data.make
     this.model = data.model
-    this.price = parseInt(data.price) // convert a string into a number
+    this.price = parseInt(data.price) // convert a string into a number, ex: '7' => 7, 'cat' => NaN
     this.imgUrl = data.imgUrl
     this.mileage = parseInt(data.mileage)
     this.color = data.color
@@ -39,6 +39,8 @@ export class Car {
           <p class="mt-3"></p>
           <p>This is a ${this.condition} condition ${this.make} ${this.model} with ${this.horsePower} horse power and has ${this.mileageWithCommas} miles.</p>
           <div class="text-end">
+
+           <!-- NOTE if you are passing a string as an argument, make sure to surround that string with single quotes ('') -->
             <button onclick="app.carsController.deleteCar('${this.id}')" class="btn btn-outline-danger" type="button">
               <span class="mdi mdi-delete"></span> Delete
             </button>
@@ -51,11 +53,11 @@ export class Car {
   }
 
   get priceAsUSD() {
-    return '$' + this.price.toLocaleString() // 12,000
+    return '$' + this.price.toLocaleString() // $12,000
   }
 
   get mileageWithCommas() {
-    return this.mileage.toLocaleString()
+    return this.mileage.toLocaleString() // 12,000
   }
 
   get titleIcon() {
@@ -75,7 +77,7 @@ export class Car {
   }
 
   get listedAtDate() {
-    return this.listedAt.toLocaleDateString() // 12/20/2020
+    return this.listedAt.toLocaleDateString() // 8/27/2025
   }
 
   get listedAtTime() {
