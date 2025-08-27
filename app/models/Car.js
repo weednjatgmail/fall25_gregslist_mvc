@@ -2,15 +2,15 @@ export class Car {
   constructor(data) {
     this.make = data.make
     this.model = data.model
-    this.price = data.price
+    this.price = parseInt(data.price) // convert a string into a number
     this.imgUrl = data.imgUrl
-    this.mileage = data.mileage
+    this.mileage = parseInt(data.mileage)
     this.color = data.color
-    this.year = data.year
+    this.year = parseInt(data.year)
     this.horsePower = data.horsePower
     this.hasCleanTitle = data.hasCleanTitle
     this.isDrivable = data.isDrivable
-    this.condition = data.condition
+    this.condition = data.condition || 'unknown' // defaults to unknown if the data does not have a condition
     // NOTE Date is a class built into Javascript, that will return an object based on your browser's date and time
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
     this.listedAt = new Date()
@@ -34,7 +34,7 @@ export class Car {
           </div>
           <small title="${this.listedAtTime}">Listed on ${this.listedAtDate}</small>
           <p class="mt-3"></p>
-          <p>This is a ${this.condition} condition ${this.make} ${this.model} with ${this.horsePower} horse power and has ${this.mileage} miles.</p>
+          <p>This is a ${this.condition} condition ${this.make} ${this.model} with ${this.horsePower} horse power and has ${this.mileageWithCommas} miles.</p>
         </div>
         <span class="text-success car-price bg-light px-2">${this.priceAsUSD}</span>
       </div>
@@ -43,7 +43,11 @@ export class Car {
   }
 
   get priceAsUSD() {
-    return '$' + this.price.toLocaleString()
+    return '$' + this.price.toLocaleString() // 12,000
+  }
+
+  get mileageWithCommas() {
+    return this.mileage.toLocaleString()
   }
 
   get titleIcon() {

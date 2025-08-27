@@ -27,53 +27,53 @@
     <section class="container">
       <div class="row my-3">
         <div class="col-12">
-          <form>
+          <form onsubmit="app.carsController.submitCar()">
             <div>
               <label for="car-make">Car Make</label>
-              <input id="car-make" type="text" minlength="2" maxlength="50" required>
+              <input id="car-make" type="text" minlength="2" maxlength="50" required name="make">
             </div>
             <div>
               <label for="car-model">Car Model</label>
-              <input id="car-model" type="text" minlength="1" maxlength="100" required>
+              <input id="car-model" type="text" minlength="1" maxlength="100" required name="model">
             </div>
             <div>
               <label for="car-year">Car Year</label>
               <!-- TODO it would be good to automate setting the max here -->
-              <input id="car-year" type="number" min="1886" max="2026" required>
+              <input id="car-year" type="number" min="1886" max="2026" required name="year">
             </div>
             <div>
               <label for="car-mileage">Car Mileage</label>
-              <input id="car-mileage" type="number" min="0" max="4000000" required>
+              <input id="car-mileage" type="number" min="0" max="4000000" required name="mileage">
             </div>
             <div>
               <div>
                 <label for="car-price">Car Price (in USD)</label>
-                <input id="car-price" type="number" min="0" max="1000000" required>
+                <input id="car-price" type="number" min="0" max="1000000" required name="price">
               </div>
               <div>
                 <div>
                   <label for="car-img-url">Car Image URL</label>
-                  <input id="car-img-url" type="url" maxlength="500" required>
+                  <input id="car-img-url" type="url" maxlength="500" required name="imgUrl">
                 </div>
                 <div>
                   <label for="car-color">Car Color</label>
-                  <input id="car-color" type="color" required>
+                  <input id="car-color" type="color" required name="color">
                 </div>
                 <div>
                   <label for="car-condition">Car Condition</label>
-                  <input id="car-condition" type="text" maxlength="200">
+                  <input id="car-condition" type="text" maxlength="200" name="condition">
                 </div>
                 <div>
                   <label for="car-horse-power">Car Horse Power</label>
-                  <input id="car-horse-power" type="number" min="1" max="500" required>
+                  <input id="car-horse-power" type="number" min="1" max="500" required name="horsePower">
                 </div>
                 <div>
                   <label for="car-has-clean-title">Does the car have a clean title?</label>
-                  <input id="car-has-clean-title" type="checkbox">
+                  <input id="car-has-clean-title" type="checkbox" name="hasCleanTitle">
                 </div>
                 <div>
                   <label for="car-is-drivable">Can I drive it off the lot?</label>
-                  <input id="car-is-drivable" type="checkbox">
+                  <input id="car-is-drivable" type="checkbox" name="isDrivable">
                 </div>
                 <button type="reset">Reset</button>
                 <button type="submit">Submit</button>
