@@ -19,4 +19,15 @@ main {
 .car-price {
   position: absolute;
   top: 0;
+  right: 0;
+}
+
+.car-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.car-border {
+  border: inset 10px black;
 }
