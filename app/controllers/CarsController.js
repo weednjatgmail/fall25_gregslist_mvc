@@ -62,4 +62,8 @@ export class CarsController {
 
     carsService.deleteCar(carId)
   }
+
+  toggleCarsSection() {
+    document.getElementById('cars-section').classList.toggle('d-none')
+  }
 }

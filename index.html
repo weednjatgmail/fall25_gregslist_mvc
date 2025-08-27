@@ -23,8 +23,14 @@
   </header>
 
   <main>
+    <div class="text-center mt-2">
+      <button onclick="app.carsController.toggleCarsSection()" class="btn btn-primary">Cars 🚗</button>
+    </div>
 
-    <section class="container">
+    <!-- TODO houses stuff goes here -->
+
+    <!-- TODO add d-none to hide this junk -->
+    <section id="cars-section" class="container">
       <div class="row my-3">
         <div class="col-12">
           <form onsubmit="app.carsController.submitCar()">
